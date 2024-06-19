@@ -90,6 +90,11 @@ impl Account {
     /// a key for the cache, but it's recommended to use the real email to
     /// avoid confusion.
     pub async fn microsoft(email: &str) -> Result<Self, azalea_auth::AuthError> {
+        Self::microsoft_with_custom_client_id(email, None).await
+    }
+
+    /// Similar to [`account.microsoft()`](Self::microsoft) but you can use your own `client_id`.
+    pub async fn microsoft_with_custom_client_id(email: &str, client_id: Option<&'static str>) -> Result<Self, azalea_auth::AuthError> {
         let minecraft_dir = minecraft_folder_path::minecraft_dir().unwrap_or_else(|| {
             panic!(
                 "No {} environment variable found",
@@ -100,6 +105,7 @@ impl Account {
             email,
             azalea_auth::AuthOpts {
                 cache_file: Some(minecraft_dir.join("azalea-auth.json")),
+                client_id,
                 ..Default::default()
             },
         )
@@ -128,7 +134,9 @@ impl Account {
     /// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
     /// let client = reqwest::Client::new();
     ///
-    /// let res = azalea_auth::get_ms_link_code(&client).await?;
+    /// let res = azalea_auth::get_ms_link_code(&client, None).await?;
+    /// // Or, `azalea_auth::get_ms_link_code(&client, Some(client_id)).await?`
+    /// // if you want to use your own client_id
     /// println!(
     ///     "Go to {} and enter the code {}",
     ///     res.verification_uri, res.user_code
@@ -139,13 +147,21 @@ impl Account {
     /// # }
     /// ```
     pub async fn with_microsoft_access_token(
+        msa: azalea_auth::cache::ExpiringValue<AccessTokenResponse>
+    ) -> Result<Self, azalea_auth::AuthError> {
+        Self::with_microsoft_access_token_and_custom_client_id(msa, None).await
+    }
+
+    /// Similar to [`Account::with_microsoft_access_token`] but you can you custom `client_id`.
+    pub async fn with_microsoft_access_token_and_custom_client_id(
         mut msa: azalea_auth::cache::ExpiringValue<AccessTokenResponse>,
+        client_id: Option<&'static str>
     ) -> Result<Self, azalea_auth::AuthError> {
         let client = reqwest::Client::new();
 
         if msa.is_expired() {
             tracing::trace!("refreshing Microsoft auth token");
-            msa = azalea_auth::refresh_ms_auth_token(&client, &msa.data.refresh_token).await?;
+            msa = azalea_auth::refresh_ms_auth_token(&client, &msa.data.refresh_token, client_id).await?;
         }
 
         let msa_token = &msa.data.access_token;
