@@ -1,6 +1,13 @@
-# Azalea
+# Azalea [Better 1.20.6]
 
 [![docs.rs](https://img.shields.io/docsrs/azalea)](https://docs.rs/azalea)
+
+This version of azalea, supports multiple features of some of my pull requests [#159](https://github.com/azalea-rs/azalea/pull/159), [#158](https://github.com/azalea-rs/azalea/pull/158), and [#156](https://github.com/azalea-rs/azalea/pull/156)
+all baked into MC Version 1.20.6 as these PR(s) are for MC Version 1.21
+
+This separate branch `better-1.20.6` is created so that we could use all the features of the above pull requests with our 
+servers, as MC 1.21 is not supported by my intended server. So, why not enjoy them in this branch rather than using [`azalea-viaproxy`](https://github.com/azalea-rs/azalea-viaversion)
+which seems to be broken :(
 
 A collection of Rust crates for making Minecraft bots, clients, and tools.
 
