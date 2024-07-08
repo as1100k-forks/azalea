@@ -1,6 +1,10 @@
-# Azalea
+# Azalea [Better-1.21]
 
 [![docs.rs](https://img.shields.io/docsrs/azalea)](https://docs.rs/azalea)
+
+This version of azalea, supports the following features and fixes:
+* Public `Hunger` Component
+* Fix `AlreadyPresentError`
 
 A collection of Rust crates for making Minecraft bots, clients, and tools.
 
