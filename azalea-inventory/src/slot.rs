@@ -173,18 +173,12 @@ impl McBufWritable for ItemSlot {
 
 #[derive(Default)]
 pub struct DataComponentPatch {
-    components: HashMap<DataComponentKind, Option<Box<dyn components::EncodableDataComponent>>>,
+    pub components: HashMap<DataComponentKind, Option<Box<dyn components::EncodableDataComponent>>>,
 }
 
 impl DataComponentPatch {
     pub fn get(&self, kind: DataComponentKind) -> Option<&dyn components::EncodableDataComponent> {
         self.components.get(&kind).and_then(|c| c.as_deref())
-    }
-}
-
-impl<'a, K, V> Into<Iter<'a, K, V>> for DataComponentPatch {
-    fn into(self) -> Iter<'a, K, V> {
-        self.components.iter()
     }
 }
 
