@@ -222,7 +222,7 @@ dependencies = [
  "parking_lot",
  "priority-queue",
  "rand",
- "rustc-hash 2.0.0",
+ "rustc-hash",
  "thiserror",
  "tokio",
  "tracing",
@@ -547,7 +547,7 @@ dependencies = [
  "nohash-hasher",
  "once_cell",
  "parking_lot",
- "rustc-hash 2.0.0",
+ "rustc-hash",
  "serde",
  "serde_json",
  "simdnbt",
@@ -624,7 +624,7 @@ dependencies = [
  "bevy_utils",
  "downcast-rs",
  "fixedbitset",
- "rustc-hash 1.1.0",
+ "rustc-hash",
  "serde",
  "thiserror",
  "thread_local",
@@ -666,7 +666,7 @@ checksum = "eb270c98a96243b29465139ed10bda2f675d00a11904f6588a5f7fc4774119c7"
 dependencies = [
  "proc-macro2",
  "quote",
- "rustc-hash 1.1.0",
+ "rustc-hash",
  "syn",
  "toml_edit",
 ]
@@ -2019,7 +2019,7 @@ dependencies = [
  "pin-project-lite",
  "quinn-proto",
  "quinn-udp",
- "rustc-hash 1.1.0",
+ "rustc-hash",
  "rustls",
  "thiserror",
  "tokio",
@@ -2035,7 +2035,7 @@ dependencies = [
  "bytes",
  "rand",
  "ring",
- "rustc-hash 1.1.0",
+ "rustc-hash",
  "rustls",
  "slab",
  "thiserror",
@@ -2285,12 +2285,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
 
 [[package]]
-name = "rustc-hash"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "583034fd73374156e66797ed8e5b0d5690409c9226b22d87cb7f19821c05d152"
-
-[[package]]
 name = "rustc_version"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2462,9 +2456,8 @@ dependencies = [
 
 [[package]]
 name = "simdnbt"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7873e74b45488cc8b44a7c0ffc40c156b36402b6001272ab6b301d4e641f185d"
+version = "0.5.2"
+source = "git+https://github.com/azalea-rs/simdnbt?rev=eb960e0#eb960e076e620168eac0d5474dd0bb7953dd5f70"
 dependencies = [
  "byteorder",
  "flate2",
@@ -2476,9 +2469,8 @@ dependencies = [
 
 [[package]]
 name = "simdnbt-derive"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10dbcddd4df92d15834757fb1f61ececc00840b96a2d7b0daf09aef596628c00"
+version = "0.5.2"
+source = "git+https://github.com/azalea-rs/simdnbt?rev=eb960e0#eb960e076e620168eac0d5474dd0bb7953dd5f70"
 dependencies = [
  "proc-macro2",
  "quote",
