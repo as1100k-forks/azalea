@@ -33,9 +33,7 @@ jobs:
         env:
           FILE_NAME: "./target/doc/index.html"
           FILE_DATA: '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=''./azalea''"/></head></html>' # Redirect to default page
-    
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
