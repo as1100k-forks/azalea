@@ -5,7 +5,6 @@ use std::{
     fmt,
     io::{Cursor, Write},
 };
-use std::collections::hash_map::Iter;
 
 use crate::components::{self};
 
