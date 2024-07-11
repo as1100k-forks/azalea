@@ -172,7 +172,7 @@ impl McBufWritable for ItemSlot {
 
 #[derive(Default)]
 pub struct DataComponentPatch {
-    components: HashMap<DataComponentKind, Option<Box<dyn components::EncodableDataComponent>>>,
+    pub components: HashMap<DataComponentKind, Option<Box<dyn components::EncodableDataComponent>>>,
 }
 
 impl DataComponentPatch {

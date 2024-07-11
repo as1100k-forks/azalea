@@ -3,7 +3,7 @@
 [![docs.rs](https://img.shields.io/docsrs/azalea)](https://docs.rs/azalea)
 
 This version of azalea, supports the following features and fixes:
-* Public `Hunger` Component
+* Public `Hunger`, `DataComponentPatch`
 * Added Auth Customization Options from [#159](https://github.com/azalea-rs/azalea/pull/159)
 * Fix `AlreadyPresentError`
 * Fix `ChunkStorage` Error from [#158](https://github.com/azalea-rs/azalea/pull/158)
