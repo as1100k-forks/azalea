@@ -6,6 +6,7 @@ This version of azalea, supports the following features and fixes:
 * Public `Hunger`, `DataComponentPatch`
 * Added Auth Customization Options from [#159](https://github.com/azalea-rs/azalea/pull/159)
 * Fix `ChunkStorage` Error from [#158](https://github.com/azalea-rs/azalea/pull/158)
+* Fix `simdnbt` error
 
 A collection of Rust crates for making Minecraft bots, clients, and tools.
 
