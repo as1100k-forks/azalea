@@ -2169,6 +2169,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "residua-cesu8"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6ca29b145d9861719b5505602d881afc46705200144153ca9dbc0802be2938ea"
+
+[[package]]
+name = "residua-mutf8"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2adba843a48e520e7dad6d1e9c367a4f818787eaccf4530c6b90dd1f035e630d"
+dependencies = [
+ "residua-cesu8",
+]
+
+[[package]]
 name = "ring"
 version = "0.17.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2398,24 +2413,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "simd_cesu8"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c14f02c32cc4ef5068b0e15bee4513942f59165add7778a518b4d507b3b97ab"
-dependencies = [
- "rustc_version",
- "simdutf8",
-]
-
-[[package]]
 name = "simdnbt"
-version = "0.6.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67d972ab7303916ad0554fa4b1f539e09f6de628211d5b51254a69e95bbe6816"
+checksum = "fb95596ab43601d8f81981640b5c29962a859039eace993b2584f09ea9923eca"
 dependencies = [
  "byteorder",
  "flate2",
- "simd_cesu8",
+ "residua-mutf8",
  "simdnbt-derive",
  "thiserror",
  "valence_nbt",
@@ -2423,20 +2428,14 @@ dependencies = [
 
 [[package]]
 name = "simdnbt-derive"
-version = "0.6.0"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10dbcddd4df92d15834757fb1f61ececc00840b96a2d7b0daf09aef596628c00"
+checksum = "1ed0dc6e2310261ee8e08a20ccb0ddf31d9cbdf316f43429ad3fb251653e41fb"
 dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.77",
 ]
-
-[[package]]
-name = "simdutf8"
-version = "0.1.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3a9fe34e3e7a50316060351f37187a3f546bce95496156754b601a5fa71b76e"
 
 [[package]]
 name = "simple_asn1"
