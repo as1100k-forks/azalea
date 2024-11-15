@@ -206,7 +206,7 @@ pub struct SendChatEvent {
     pub content: String,
 }
 
-fn handle_send_chat_event(
+pub fn handle_send_chat_event(
     mut events: EventReader<SendChatEvent>,
     mut send_chat_kind_events: EventWriter<SendChatKindEvent>,
 ) {
